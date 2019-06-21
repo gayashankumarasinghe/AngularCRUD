@@ -1,23 +1,24 @@
 <form class="emp-form" #employeeForm = "ngForm"  (ngSubmit) = "onSubmit(employeeForm)" >
+        <input type="hidden" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmployeeID">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input class="form-control" name="FirstName" placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="employeeService.FirstName" required>
+            <input class="form-control" name="FirstName" placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="employeeService.selectedEmployee.FirstName" required>
             <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">Please input a value</div>
         </div>
         <div class="form-group col-md-6">
-            <input class="form-control" name="LastName" placeholder="Lastname" #LastName="ngModel" [(ngModel)]="employeeService.LastName" required>
+            <input class="form-control" name="LastName" placeholder="Lastname" #LastName="ngModel" [(ngModel)]="employeeService.selectedEmployee.LastName" required>
             <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">Please input a value</div>
         </div>
     </div>
     <div class="form-group">
-        <input class="form-control" name="Position" placeholder="Position" #Position="ngModel" [(ngModel)]="employeeService.Position">
+        <input class="form-control" name="Position" placeholder="Position" #Position="ngModel" [(ngModel)]="employeeService.selectedEmployee.Position">
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input  class="form-control" name="EmpCode" placeholder="Employee code" #EmpCode="ngModel" [(ngModel)]="employeeService.EmpCode">
+            <input  class="form-control" name="EmpCode" placeholder="Employee code" #EmpCode="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmpCode">
         </div>
         <div class="form-group col-md-6">
-            <input  class="form-control" name="Office" placeholder="Office" #Office="ngModel" [(ngModel)]="employeeService.Office">
+            <input  class="form-control" name="Office" placeholder="Office" #Office="ngModel" [(ngModel)]="employeeService.selectedEmployee.Office">
         </div>
     </div>
     <div class="form-row">
